@@ -1,0 +1,43 @@
+.details {
+  background-color: black;
+  color: white;
+  padding: 30px;
+  font-size: 2rem;
+  margin: 20px;
+  border-radius: 20px;
+  text-align: center;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.formdetails {
+  text-align: center;
+  margin: 20px;
+  margin-top: 30px;
+  background-color: antiquewhite;
+  padding: 25px;
+  border-radius: 20px;
+}
+
+.formdetails form input[type="text"] {
+  width: 300px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.formdetails form input[type="number"] {
+  width: 300px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.formdetails form select {
+  width: 300px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.formdetails form input[type="radio"] {
+  padding: 0px;
+  margin: 0px;
+
+}

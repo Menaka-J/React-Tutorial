@@ -1,0 +1,35 @@
+.container {
+  text-align: center;
+  margin: 15px;
+  background-color: antiquewhite;
+  padding: 30px;
+  padding-bottom: 50px;
+  border: 1px solid black;
+  border-radius: 20px;
+}
+
+.container h2{
+  background-color:brown;
+  color: white;
+  padding: 10px;
+  border-radius: 15px;
+  border: 1px solid black;
+}
+.container p {
+  font-size: 6rem;
+}
+
+.container button {
+  padding: 10px;
+  margin: 10px;
+  width: 25%;
+  background-color: green;
+  color: white;
+  font-size: 20px;
+  border-radius: 10px;
+}
+
+.container button:hover {
+  background-color: rgb(58, 218, 58);
+  cursor: pointer;
+}

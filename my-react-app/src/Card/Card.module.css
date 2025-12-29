@@ -1,0 +1,28 @@
+.card {
+    border: 2px solid black;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px rgb(42, 41, 41);
+    max-width: 250px;
+    text-align: center;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    display: inline-block;
+    cursor: pointer;
+    columns: rgb(79, 78, 78);
+}
+
+.cardimage {
+    border-radius: 15px;
+    max-width: 60%;
+    height: auto;
+    color: rgb(79, 78, 78);
+}
+
+.cardtitle {
+    color: rgb(79, 78, 78);
+}
+
+.carddescription {
+    color: rgb(79, 78, 78);
+}

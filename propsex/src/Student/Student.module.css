@@ -1,0 +1,9 @@
+.studentdiv {
+    font-size: 20px;
+    background-color: azure;
+    padding: 15px;
+    border: 1px solid black;
+    border-radius: 8px;
+    display: inline-block;
+    margin: 10px;
+}
