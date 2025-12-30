@@ -31,6 +31,14 @@ function Updater() {
             <label>Enter your Name:</label>
             <br />
             <input type="text" value={player.name} placeholder="Enter your Name" onChange={handleName} />
+            <br /><br />
+
+            <label>Enter Age:</label>
+            <br />
+            <input type="number" value={player.age} placeholder="Enter age" onChange={handleAge}/>
+            <br /><br />
+
+            <label>Enter</label>
         </div>
         </>
     )
