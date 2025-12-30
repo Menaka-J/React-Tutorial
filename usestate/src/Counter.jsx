@@ -9,11 +9,11 @@ function Counter() {
     }
 
     function handleincrease() {
-        setCount(count + 1);
+        setCount(c => c + 1);
     }
 
     function handledecrease() {
-        setCount(count - 1);
+        setCount(c => c - 1);
     }
 
     return (
