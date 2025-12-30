@@ -19,27 +19,29 @@ function Updater() {
 
         <>
 
-        <div className="displaytxt">
-            <p>Name: {player.name}</p>
-            <p>Age: {player.age}</p>
-            <p>Team: {player.team}</p>
-        </div>
+            <div className="displaytxt">
+                <p>Name: {player.name}</p>
+                <p>Age: {player.age}</p>
+                <p>Team: {player.team}</p>
+            </div>
 
-        <br /><br />
-
-        <div className="inputtxt">
-            <label>Enter your Name:</label>
-            <br />
-            <input type="text" value={player.name} placeholder="Enter your Name" onChange={handleName} />
             <br /><br />
 
-            <label>Enter Age:</label>
-            <br />
-            <input type="number" value={player.age} placeholder="Enter age" onChange={handleAge}/>
-            <br /><br />
+            <div className="inputtxt">
+                <label>Enter your Name:</label>
+                <br />
+                <input type="text" value={player.name} placeholder="Enter your Name" onChange={handleName} />
+                <br /><br />
 
-            <label>Enter</label>
-        </div>
+                <label>Enter Age:</label>
+                <br />
+                <input type="number" value={player.age} placeholder="Enter age" onChange={handleAge} />
+                <br /><br />
+
+                <label>Enter Team:</label>
+                <br />
+                <input type="text" value={player.team} placeholder="Enter your Team" onChange={handleTeam} />
+            </div>
         </>
     )
 }
