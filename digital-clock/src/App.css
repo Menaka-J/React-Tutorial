@@ -1,0 +1,28 @@
+body{
+  background-image: url("https://img1.hotstarext.com/image/upload/f_auto,q_auto/sources/r1/cms/prod/983/1120983-i-633ec2bcc241");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  margin: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.clock{
+  color: white;
+  font-size: 6rem;
+  font-weight: bold;
+  font-family: monospace;
+  text-align: center;
+  text-shadow: 3px 3px 5px rgb(246, 240, 240);
+}
+
+.container{
+  width: 100vw;
+  padding: 10px 0px;
+  backdrop-filter: blur(2px);
+}
