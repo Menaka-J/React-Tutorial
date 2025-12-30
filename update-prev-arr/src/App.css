@@ -1,0 +1,30 @@
+.displaytxt{
+  background-color: darkmagenta;
+  border: 2px solid black;
+  border-radius: 10px;
+  font-family: sans-serif;
+  padding: 20px;
+  margin: 25px;
+  color: white;
+  font-size: larger;
+  text-align: center;
+}
+
+.inputtxt{
+  background-color: antiquewhite;
+  border: 2px solid black;
+  border-radius: 15px;
+  padding: 25px;
+  margin: 25px;
+  font-size: larger;
+  text-align: center;
+}
+
+.rapper{
+  border: 3px solid black;
+  border-radius: 15px;
+  background-color: aliceblue;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+}
