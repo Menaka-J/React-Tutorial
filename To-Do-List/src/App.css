@@ -1,0 +1,95 @@
+body{
+  color: white;
+  background-color: grey;
+}
+
+.container {
+  background-color: black;
+  padding: 30px 20px;
+  margin: 20px;
+  text-align: center;
+  color: white;
+  border-radius: 20px;
+}
+
+.title{
+  font-size: 2rem;
+  color: rgb(237, 197, 197);
+}
+.inputform .addb {
+  padding: 8px;
+  background-color: rgb(90, 219, 51);
+  border-radius: 5px;
+  margin: 5px;
+  font-size: 15px;
+  color: white;
+}
+
+.inputform .addb:hover{
+  cursor: pointer;
+  background-color: rgb(56, 163, 56);
+}
+
+.inputform input[type="text"]{
+  padding: 8px;
+  margin: 5px;
+  font-size: 15px;
+  border-radius: 5px;
+}
+
+.tasklist{
+  margin: 10px;
+  padding: 10px;
+  border-radius: 15px;
+  border: 1px white solid;
+}
+
+.tasktitle{
+  font-size: larger;
+}
+
+.tasklist .ullist li{
+margin: 8px;
+width: 90%;
+list-style: none;
+}
+
+.deleteb{
+  background-color: red;
+  padding: 8px;
+  color: white;
+  border-radius: 10px;
+  border: 1px solid black;
+  margin: 10px;
+  font-size: 15px;
+}
+
+.deleteb:hover{
+  cursor: pointer;
+  background-color: rgb(245, 103, 103);
+}
+
+.upb, .downb{
+  padding: 8px 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: 10px;
+  background-color: rgb(50, 136, 189);
+}
+
+.upb:hover{
+  cursor: pointer;
+  background-color: lightblue;
+}
+
+.downb:hover{
+  cursor: pointer;
+  background-color: lightblue;
+}
+
+.listone{
+  background-color: white;
+  color: black;
+  font-size: 1.5rem;
+  border-radius: 10px;
+}

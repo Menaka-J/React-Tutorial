@@ -6,8 +6,10 @@ function ToDoApp() {
 
     function addtask() {
         let newtask = document.getElementById("io").value;
-        setTaskList(t => ([...t, newtask]));
-        document.getElementById("io").value = "";
+        if (newtask != "") {
+            setTaskList(t => ([...t, newtask]));
+            document.getElementById("io").value = "";
+        }
     }
 
     function deletetask(idx) {
@@ -16,31 +18,40 @@ function ToDoApp() {
     }
 
     function moveup(idx) {
-        
+        if (idx > 0) {
+            const taskold = [...taskList];
+            [taskold[idx], taskold[idx - 1]] = [taskold[idx - 1], taskold[idx]];
+            setTaskList(taskold);
+        }
     }
 
     function movedown(idx) {
-
+        if (idx >= 0 && idx < taskList.length - 1) {
+            const taskold = [...taskList];
+            [taskold[idx], taskold[idx + 1]] = [taskold[idx + 1], taskold[idx]];
+            setTaskList(taskold);
+        }
     }
 
     return (
         <>
 
-            <div className="continer">
-                <h2>TO DO LIST</h2>
-                <div>
+            <div className="container">
+                <h2 className="title">TO DO LIST</h2>
+                <div className="inputform">
                     <input type="text" placeholder="Enter Task" id="io" />
-                    <button onClick={addtask}>ADD TASK</button>
+                    <button onClick={addtask} className="addb">ADD TASK</button>
                 </div>
 
                 <div className="tasklist">
+                    <h3 className="tasktitle">YOUR TASKS</h3>
                     <ol className="ullist">
                         {taskList.map((ele, i) =>
-                            <li key={i}>
+                            <li key={i} className="listone">
                                 <span className="taskname">{ele}</span>
-                                <button onClick={() => deletetask(i)}>DELETE</button>
-                                <button onClick={() => moveup(i)}>👆</button>
-                                <button onClick={() => movedown(i)}>👇</button>
+                                <button onClick={() => deletetask(i)} className="deleteb">DELETE</button>
+                                <button onClick={() => moveup(i)} className="upb">👆</button>
+                                <button onClick={() => movedown(i)} className="downb">👇</button>
                             </li>
                         )}
                     </ol>
