@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Updater from './Updater'
 import ArrayUpdate from './ArrayUpdate'
+import ArrObjUpdater from './ArrayObjUpdater'
 
 function App() {
 
@@ -11,6 +12,7 @@ function App() {
     <>
       <Updater></Updater>
       <ArrayUpdate></ArrayUpdate>
+      <ArrObjUpdater></ArrObjUpdater>
     </>
   )
 }
