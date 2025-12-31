@@ -5,7 +5,7 @@ function ToDoApp() {
 
     const API_URL = 'http://localhost:3000/taskList';
     const [taskList, setTaskList] = useState([]);
-    // const [fetchError, setFtechError] = useState(null);
+    const [fetchError, setFtechError] = useState(null);
     // const [taskList, setTaskList] = useState(() => JSON.parse(localStorage.getItem("list")) || []);
     const [isLoading, setLoading] = useState(true);
     const inputRef = useRef();
@@ -52,18 +52,20 @@ function ToDoApp() {
                 const listItems = await response.json();
                 console.log(listItems);
                 setTaskList(listItems);
-                // setFtechError(null);
+                setFtechError(null);
             } catch (err) {
                 console.log(err.stack);
-                // setFtechError(err.message);
+                setFtechError(err.message);
+            }
+            finally {
+                setLoading(false);
             }
         }
 
         //the below coed will make load for 2 sec which means the data in db.json wouldn't available till 2sec
         setTimeout(() => {
             (async () => await fetchItems())()
-            setLoading(false);
-        }, 2000)
+        }, 1000)
         // (async () => await fetchItems())()
     }, []);
 
@@ -89,13 +91,18 @@ function ToDoApp() {
                     }} className="addb" >ADD TASK</button>
                 </div>
 
-                <div className="tasklist">
+                {!fetchError ? <div className="tasklist">
                     <h3 className="tasktitle">YOUR TASKS</h3>
                     {isLoading && <h3>Loading Tasks...</h3>}
                     <ol className="ullist">
                         {taskList.length > 0 ? itemmsg : !isLoading && <h3>No Tasks added yet</h3>}
                     </ol>
-                </div>
+                </div> :
+                    <div><h3>{fetchError}</h3>
+                        <h3>Error occured</h3>
+                        <h3>Try agian later</h3></div>
+                }
+
 
             </div >
         </>
