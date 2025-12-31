@@ -1,9 +1,12 @@
 import { useRef } from "react";
-import { useState , useEffect } from "react"
+import { useState, useEffect } from "react"
 
 function ToDoApp() {
 
-    const [taskList, setTaskList] = useState(() => JSON.parse(localStorage.getItem("list")) || []);
+    const API_URL = 'http://localhost:3000/taskList';
+    // const [taskList, setTaskList] = useState(() => JSON.parse(localStorage.getItem("list")) || []);
+    const [taskList, setTaskList] = useState([]);
+
     const inputRef = useRef();
 
     function addtask() {
@@ -34,9 +37,25 @@ function ToDoApp() {
             setTaskList(taskold);
         }
     }
+    // useEffect(() => {
+    //     localStorage.setItem("list", JSON.stringify(taskList));
+    // }, [taskList]);
+
     useEffect(() => {
-        localStorage.setItem("list", JSON.stringify(taskList));
-    }, [taskList]);
+
+        const fetchItems = async () => {
+            try {
+                const response = await fetch(API_URL);
+                console.log(response);
+                const listItems = await response.json();
+                console.log(listItems);
+                setTaskList(listItems);
+            } catch (err) {
+                console.log(err.stack)
+            }
+        }
+        (async () => await fetchItems())()
+    }, []);
 
     return (
         <>
