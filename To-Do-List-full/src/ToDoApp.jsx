@@ -29,12 +29,23 @@ function ToDoApp() {
             setTaskList(t => [...t, result]);
             document.getElementById("io").value = "";
         }
+        console.log("Task added")
+
+        // const requrl = `${API_URL}/${id}`
+        // const result = await apiRequest(requrl, postOptions)
+        // if (result) setFtechError(result)
     }
 
 
     // async function deletetask(idx) {
     //     const newlist = taskList.filter((_, index) => index != idx);
     //     setTaskList(newlist);
+
+    // const deleteOptiosn = {method:'DELETE'}
+    // const requrl = `${API_URL}/${idx}`
+    // const result = await apiRequest(requrl, deleteOptiosn)
+    // if (result) setFtechError(result)
+
     // }
     async function deletetask(id) {
         const result = await apiRequest(`${API_URL}/${id}`, { method: 'DELETE' });
@@ -44,6 +55,7 @@ function ToDoApp() {
         } else {
             setTaskList(taskList.filter(task => task.id !== id));
         }
+        console.log("Task deleted")
     }
 
     function moveup(idx) {
