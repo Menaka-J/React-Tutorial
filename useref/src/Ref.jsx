@@ -49,4 +49,14 @@ function Ref() {
     )
 }
 
-export default Ref 
+export default Ref
+
+//mostly used to focus on input items cursor on most of the websites
+// done by
+
+// 1=> creating a variable for it 
+//     const inputRef = useRef(); { yt -> useRef(JSON.parse(localStorage.getItem("item_name"))) }
+
+// 2=> setting it in button and input field for focus
+//     < input ref = { inputRef } />
+//     <button onclick={() => inputRef.current.focus}>   ==> it will change the focus of cursor to input field after button is clicked
