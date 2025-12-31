@@ -145,3 +145,7 @@ function ToDoApp() {
 }
 
 export default ToDoApp
+
+//used json-server for learning api in real time
+//used useRef and useEffect for loading and showing curson on input
+//basic is To-Do-List
