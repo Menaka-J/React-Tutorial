@@ -24,3 +24,5 @@ function Element() {
 export default Element;
 
 //useEffect => to use when renders, mounts
+
+// use when you dont need to load something again and agian 
