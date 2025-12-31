@@ -4,9 +4,10 @@ import { useState, useEffect } from "react"
 function ToDoApp() {
 
     const API_URL = 'http://localhost:3000/taskList';
-    // const [taskList, setTaskList] = useState(() => JSON.parse(localStorage.getItem("list")) || []);
     const [taskList, setTaskList] = useState([]);
     // const [fetchError, setFtechError] = useState(null);
+    // const [taskList, setTaskList] = useState(() => JSON.parse(localStorage.getItem("list")) || []);
+    const [isLoading, setLoading] = useState(true);
     const inputRef = useRef();
 
     function addtask() {
@@ -57,8 +58,23 @@ function ToDoApp() {
                 // setFtechError(err.message);
             }
         }
-        (async () => await fetchItems())()
+
+        //the below coed will make load for 2 sec which means the data in db.json wouldn't available till 2sec
+        setTimeout(() => {
+            (async () => await fetchItems())()
+            setLoading(false);
+        }, 2000)
+        // (async () => await fetchItems())()
     }, []);
+
+    const itemmsg = taskList.map((ele, i) =>
+        <li key={i} className="listone">
+            <span className="taskname">{ele}</span>
+            <button onClick={() => deletetask(i)} className="deleteb">DELETE</button>
+            <button onClick={() => moveup(i)} className="upb">👆</button>
+            <button onClick={() => movedown(i)} className="downb">👇</button>
+        </li>
+    )
 
     return (
         <>
@@ -75,15 +91,9 @@ function ToDoApp() {
 
                 <div className="tasklist">
                     <h3 className="tasktitle">YOUR TASKS</h3>
+                    {isLoading && <h3>Loading Tasks...</h3>}
                     <ol className="ullist">
-                        {taskList.map((ele, i) =>
-                            <li key={i} className="listone">
-                                <span className="taskname">{ele}</span>
-                                <button onClick={() => deletetask(i)} className="deleteb">DELETE</button>
-                                <button onClick={() => moveup(i)} className="upb">👆</button>
-                                <button onClick={() => movedown(i)} className="downb">👇</button>
-                            </li>
-                        )}
+                        {taskList.length > 0 ? itemmsg : !isLoading && <h3>No Tasks added yet</h3>}
                     </ol>
                 </div>
 
