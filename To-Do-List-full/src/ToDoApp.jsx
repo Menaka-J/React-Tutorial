@@ -6,7 +6,7 @@ function ToDoApp() {
     const API_URL = 'http://localhost:3000/taskList';
     // const [taskList, setTaskList] = useState(() => JSON.parse(localStorage.getItem("list")) || []);
     const [taskList, setTaskList] = useState([]);
-
+    // const [fetchError, setFtechError] = useState(null);
     const inputRef = useRef();
 
     function addtask() {
@@ -46,12 +46,15 @@ function ToDoApp() {
         const fetchItems = async () => {
             try {
                 const response = await fetch(API_URL);
+                if (!response.ok) throw Error("Error 404 . Data not received!");
                 console.log(response);
                 const listItems = await response.json();
                 console.log(listItems);
                 setTaskList(listItems);
+                // setFtechError(null);
             } catch (err) {
-                console.log(err.stack)
+                console.log(err.stack);
+                // setFtechError(err.message);
             }
         }
         (async () => await fetchItems())()
