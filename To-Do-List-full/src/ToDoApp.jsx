@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { useState, useEffect } from "react"
+import apiRequest from "./apiRequest";
 
 function ToDoApp() {
 
@@ -10,17 +11,39 @@ function ToDoApp() {
     const [isLoading, setLoading] = useState(true);
     const inputRef = useRef();
 
-    function addtask() {
-        let newtask = document.getElementById("io").value;
-        if (newtask != "") {
-            setTaskList(t => ([...t, newtask]));
+    async function addtask() {
+        let newtask = document.getElementById("io").value.trim();
+        if (!newtask) return;
+
+        const postOptions = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ title: newtask })
+        };
+
+        const result = await apiRequest(API_URL, postOptions);
+
+        if (typeof result === "string") {
+            setFtechError(result);
+        } else {
+            setTaskList(t => [...t, result]);
             document.getElementById("io").value = "";
         }
     }
 
-    function deletetask(idx) {
-        const newlist = taskList.filter((_, index) => index != idx);
-        setTaskList(newlist);
+
+    // async function deletetask(idx) {
+    //     const newlist = taskList.filter((_, index) => index != idx);
+    //     setTaskList(newlist);
+    // }
+    async function deletetask(id) {
+        const result = await apiRequest(`${API_URL}/${id}`, { method: 'DELETE' });
+
+        if (result) {
+            setFtechError(result);
+        } else {
+            setTaskList(taskList.filter(task => task.id !== id));
+        }
     }
 
     function moveup(idx) {
@@ -70,9 +93,9 @@ function ToDoApp() {
     }, []);
 
     const itemmsg = taskList.map((ele, i) =>
-        <li key={i} className="listone">
-            <span className="taskname">{ele}</span>
-            <button onClick={() => deletetask(i)} className="deleteb">DELETE</button>
+        <li key={ele.id} className="listone">
+            <span className="taskname">{ele.title}</span>
+            <button onClick={() => deletetask(ele.id)} className="deleteb">DELETE</button>
             <button onClick={() => moveup(i)} className="upb">👆</button>
             <button onClick={() => movedown(i)} className="downb">👇</button>
         </li>
