@@ -3,16 +3,21 @@ body{
   font-family: sans-serif;
 }
 
-.header, .footer{
-  background-color:rgb(97, 223, 233);
+.header{
+  background-color: rgb(97, 223, 233);
   display: flex;
-  padding: 5px;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  padding-left: 4%;
 }
 
 .footer{
-  place-content: center;
+  background-color: rgb(97, 223, 233);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
 }
 
 .Nav {
@@ -46,4 +51,10 @@ body{
   display: flex;
   gap: 10px;
   color: white;
+}
+
+.searchForm input[type="text"]{
+  padding: 5px;
+  border-radius: 8px;
+  font-family: sans-serif;
 }
