@@ -73,7 +73,7 @@ function App() {
   function handledelete(){
 
   }
-  
+
   return (
     <>
       <div className='App'>
@@ -85,7 +85,7 @@ function App() {
           
           <Route  path='/post'>
             <Route index element={<NewPost handleSubmit={handleSubmit} postTitle={postTitle} setPostTitle={setPostTitle} postBody={postBody} setPostBody={setPostBody}></NewPost>} />
-            <Route path='id' element={<PostPage posts={posts} handledelete={handledelete}/>}/>
+            <Route path=':id' element={<PostPage posts={posts} handledelete={handledelete}/>}/>
           </Route>
 
           <Route path='/about' element={<About />} />

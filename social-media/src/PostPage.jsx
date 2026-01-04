@@ -8,7 +8,7 @@ function PostPage({ posts, handledelete }) {
     return (
         <>
             <div className='postpage'>
-                <article className='postbox'>
+                <article className='post'>
                     {
                         post &&
                         <>
