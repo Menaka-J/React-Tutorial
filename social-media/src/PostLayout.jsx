@@ -14,3 +14,5 @@ function PostLayout() {
 }
 
 export default PostLayout
+
+//for stydy

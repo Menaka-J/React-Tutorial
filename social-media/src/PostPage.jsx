@@ -10,3 +10,5 @@ function PostPage() {
 }
 
 export default PostPage 
+
+//for study 

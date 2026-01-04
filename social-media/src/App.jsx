@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -10,10 +10,10 @@ import About from './About'
 import Missing from './Missing'
 import Footer from './Footer'
 import Home from './Home'
-import { Link, Navigate, Route, Routes } from 'react-router-dom'
+import { Link, Navigate, Route, Routes, useNavigate } from 'react-router-dom'
 import Post from './Post'
 import PostLayout from './PostLayout'
-
+import { format } from "date-fns"
 function App() {
 
   const [posts, setPosts] = useState([
@@ -41,32 +41,48 @@ function App() {
     }
   ]);
 
+  const navigate = useNavigate();
   const [search, setSearch] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [postTitle, setPostTitle] = useState('');
   const [postBody, setPostBody] = useState("");
 
+  useEffect(() => {
+    const filteredResults = posts.filter(post =>
+      post.body.toLowerCase().includes(search.toLowerCase()) ||
+      post.title.toLowerCase().includes(search.toLowerCase())
+    );
+
+    setSearchResults(filteredResults.reverse());
+  }, [posts, search]);
+
   function handleSubmit(e) {
     e.preventDefault();
+
     const id = posts.length ? posts[posts.length - 1].id + 1 : 1;
     const datetime = format(new Date(), 'MMMM dd, yyyy pp');
+
     const newPost = { id, title: postTitle, datetime, body: postBody };
-    const allPosts = [...posts, newPost];
-    setPosts(allPosts);
+
+    setPosts([...posts, newPost]);
     setPostTitle('');
     setPostBody('');
-    Navigate('/');
+    navigate('/');
   }
+
   return (
     <>
       <div className='App'>
         <Header title="PostMania"></Header>
         <Nav search={search} setSearch={setSearch}></Nav>
-        <Home posts={posts}></Home>
-        <NewPost></NewPost>
-        <PostPage></PostPage>
-        <About></About>
-        <Missing></Missing>
+
+        <Routes>
+          <Route path='/' element={<Home posts={searchResults}></Home>} />
+          <Route path='/post' element={<NewPost handleSubmit={handleSubmit} postTitle={postTitle} setPostTitle={setPostTitle} postBody={postBody} setPostBody={setPostBody}></NewPost>} />
+          <Route path='/about' element={<About />} />
+          <Route path='*' element={<Missing />} />
+        </Routes>
+        
         <Footer></Footer>
       </div>
 

@@ -3,7 +3,10 @@ import React from 'react'
 function Missing() {
     return (
         <>
-        <h1>Missing</h1>
+            <div className='missing'>
+                <h2>Page Not Found</h2>
+                <p>Please try again later.</p>
+            </div>
         </>
     )
 }
