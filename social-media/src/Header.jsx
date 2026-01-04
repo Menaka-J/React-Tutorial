@@ -1,9 +1,10 @@
 import React from 'react'
 
-function Header() {
+function Header(props) {
+    const Apptitle = props.title;
     return (
         <>
-        <h1>Header</h1>
+            <header><h1>{Apptitle}</h1></header>
         </>
     )
 }
