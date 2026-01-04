@@ -23,6 +23,7 @@ function App() {
             <li><Link to="/">Home</Link></li>
             <li><Link to="/about">About</Link></li>
             <li><Link to="/newpost">Newpost</Link></li>
+            <li><Link to="/postpage">Postpage</Link></li>
           </ul>
         </nav>
 
@@ -30,6 +31,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
           <Route path='/newpost' element={<NewPost />} />
+          <Route path='/postpage' element={<PostPage/>} />
         </Routes>
 
         {/* <Header></Header>
