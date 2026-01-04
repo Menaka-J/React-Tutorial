@@ -10,7 +10,7 @@ body {
 }
 
 .header {
-  background-color: rgb(97, 223, 233);
+  background: linear-gradient(90deg, #61dafb, #4ecdc4);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -19,7 +19,7 @@ body {
 }
 
 .footer {
-  background-color: rgb(97, 223, 233);
+  background: linear-gradient(90deg, #61dafb, #4ecdc4);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -80,6 +80,7 @@ body {
   margin-bottom: 1rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none;
 }
 
 .post:hover {
@@ -223,4 +224,3 @@ body {
   padding: 5px 10px;
   border-radius: 5px;
 }
-

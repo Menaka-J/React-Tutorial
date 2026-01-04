@@ -70,6 +70,10 @@ function App() {
     navigate('/');
   }
 
+  function handledelete(){
+
+  }
+  
   return (
     <>
       <div className='App'>
@@ -78,11 +82,16 @@ function App() {
 
         <Routes>
           <Route path='/' element={<Home posts={searchResults}></Home>} />
-          <Route path='/post' element={<NewPost handleSubmit={handleSubmit} postTitle={postTitle} setPostTitle={setPostTitle} postBody={postBody} setPostBody={setPostBody}></NewPost>} />
+          
+          <Route  path='/post'>
+            <Route index element={<NewPost handleSubmit={handleSubmit} postTitle={postTitle} setPostTitle={setPostTitle} postBody={postBody} setPostBody={setPostBody}></NewPost>} />
+            <Route path='id' element={<PostPage posts={posts} handledelete={handledelete}/>}/>
+          </Route>
+
           <Route path='/about' element={<About />} />
           <Route path='*' element={<Missing />} />
         </Routes>
-        
+
         <Footer></Footer>
       </div>
 
@@ -92,7 +101,7 @@ function App() {
 
 export default App
 
-
+//-----------------------------------------------
 // <>
 //       <div className='App'>
 
@@ -127,3 +136,19 @@ export default App
 //       </div>
 
 //     </>
+
+//------------------------------------------------
+// second 
+// <div className='App'>
+//         <Header title="PostMania"></Header>
+//         <Nav search={search} setSearch={setSearch}></Nav>
+
+//         <Routes>
+//           <Route path='/' element={<Home posts={searchResults}></Home>} />
+//           <Route path='/post' element={<NewPost handleSubmit={handleSubmit} postTitle={postTitle} setPostTitle={setPostTitle} postBody={postBody} setPostBody={setPostBody}></NewPost>} />
+//           <Route path='/about' element={<About />} />
+//           <Route path='*' element={<Missing />} />
+//         </Routes>
+        
+//         <Footer></Footer>
+//       </div>

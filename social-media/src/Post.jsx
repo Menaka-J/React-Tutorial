@@ -1,11 +1,14 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 
 function Post({ post }) {
     return (
         <article className='post'>
-            <h2 className='posttitle'>{post.title}</h2>
-            <p className='postdate'>{post.datetime}</p>
+            <Link to={`post/${post.id}`}>
+                <h2 className='posttitle'>{post.title}</h2>
+                <p className='postdate'>{post.datetime}</p>
+            </Link>
+
             <p className='postbody'>
                 {post.body.length <= 25
                     ? post.body
