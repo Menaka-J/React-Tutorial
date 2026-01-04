@@ -11,6 +11,7 @@ import Missing from './Missing'
 import Footer from './Footer'
 import Home from './Home'
 import { Link, Route, Routes } from 'react-router-dom'
+import Post from './Post'
 
 function App() {
 
@@ -31,7 +32,8 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
           <Route path='/newpost' element={<NewPost />} />
-          <Route path='/postpage' element={<PostPage/>} />
+          <Route path='/postpage' element={<PostPage />} />
+          <Route path='/postpage/:id' element={<Post />} />
         </Routes>
 
         {/* <Header></Header>
