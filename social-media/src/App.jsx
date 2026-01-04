@@ -31,9 +31,11 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
           <Route path='/newpost' element={<NewPost />} />
-          <Route path='/postpage' element={<PostPage />} />
-          <Route path='/postpage/:id' element={<Post />} />
-          <Route path='/postpage/newpost' element={<NewPost />} />
+          <Route path='/postpage'>
+            <Route index element={<PostPage />} />
+            <Route path=':id' element={<Post />} />
+            <Route path='newpost' element={<NewPost />} />
+          </Route>
           <Route path='*' element={<Missing />} />
         </Routes>
 
