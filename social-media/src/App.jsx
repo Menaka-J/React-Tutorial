@@ -21,23 +21,23 @@ function App() {
       id: 1,
       title: "My First Post",
       datetime: "January 01, 2026 00:00:00 AM",
-      body: "Stepping into 2026 with gratitude"
+      body: "Stepping into 2026 with gratitude #newyear #celebrate"
     },
     {
       id: 2,
       title: "My Second Post",
       datetime: "July 28, 2025 09:10:00 AM",
-      body: "Celebrating my Birthday"
+      body: "Celebrating my Birthday #party #myself"
     }, {
       id: 3,
       title: "My Third Post",
       datetime: "December 18, 2026 12:00:00 PM",
-      body: "The world is DOOMED"
+      body: "The world is DOOMED #marvel #doomsday"
     }, {
       id: 4,
       title: "My Fourth Post",
       datetime: "May 31, 2022 12:34:23 PM",
-      body: "The last day of school"
+      body: "The last day of school #school #life"
     }
   ]);
 
@@ -48,7 +48,7 @@ function App() {
       <div className='App'>
         <Header title="PostMania"></Header>
         <Nav search={search} setSearch={setSearch}></Nav>
-        <Home></Home>
+        <Home posts={posts}></Home>
         <NewPost></NewPost>
         <PostPage></PostPage>
         <About></About>

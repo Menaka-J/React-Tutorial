@@ -1,13 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-function Nav(props) {
+function Nav({ search, setSearch }) {
     return (
         <>
             <nav className='Nav'>
                 <form className='searchForm' onSubmit={(e) => e.preventDefault()}>
                     {/* <label htmlFor="search">Search Post</label> */}
-                    <input type="text" value={props.search} onChange={(e)=>props.setSearch(e.target.value)} id="search" placeholder='Search Posts' />
+                    <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} id="search" placeholder='Search Posts' />
                 </form>
                 <ul>
                     <li><Link to='/'>Home</Link></li>
