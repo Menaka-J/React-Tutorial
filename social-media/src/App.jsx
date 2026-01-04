@@ -16,8 +16,33 @@ import PostLayout from './PostLayout'
 
 function App() {
 
-  const [search, setSearch] = useState("");
+  const [posts, setPosts] = useState([
+    {
+      id: 1,
+      title: "My First Post",
+      datetime: "January 01, 2026 00:00:00 AM",
+      body: "Stepping into 2026 with gratitude"
+    },
+    {
+      id: 2,
+      title: "My Second Post",
+      datetime: "July 28, 2025 09:10:00 AM",
+      body: "Celebrating my Birthday"
+    }, {
+      id: 3,
+      title: "My Third Post",
+      datetime: "December 18, 2026 12:00:00 PM",
+      body: "The world is DOOMED"
+    }, {
+      id: 4,
+      title: "My Fourth Post",
+      datetime: "May 31, 2022 12:34:23 PM",
+      body: "The last day of school"
+    }
+  ]);
 
+  const [search, setSearch] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
   return (
     <>
       <div className='App'>

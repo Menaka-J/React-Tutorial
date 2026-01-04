@@ -1,0 +1,49 @@
+body{
+  font-size: 0.8rem;
+  font-family: sans-serif;
+}
+
+.header, .footer{
+  background-color:rgb(97, 223, 233);
+  display: flex;
+  padding: 5px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer{
+  place-content: center;
+}
+
+.Nav {
+  display: flex;
+  align-items: center;
+  background-color: rgb(15, 15, 15);
+  padding: 10px;
+}
+
+.Nav ul {
+  display: flex;
+  list-style: none;
+  margin-left: auto;
+  gap: 2rem;
+}
+
+.Nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.Nav a:hover {
+  background-color: white;
+  color: black;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.searchForm {
+  display: flex;
+  gap: 10px;
+  color: white;
+}

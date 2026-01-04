@@ -4,7 +4,7 @@ function Header(props) {
     const Apptitle = props.title;
     return (
         <>
-            <header><h1>{Apptitle}</h1></header>
+            <header className='header'><h1>{Apptitle}</h1></header>
         </>
     )
 }

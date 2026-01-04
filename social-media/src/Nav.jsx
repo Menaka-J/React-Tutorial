@@ -6,7 +6,7 @@ function Nav(props) {
         <>
             <nav className='Nav'>
                 <form className='searchForm' onSubmit={(e) => e.preventDefault()}>
-                    <label htmlFor="search">Search Post</label>
+                    {/* <label htmlFor="search">Search Post</label> */}
                     <input type="text" value={props.search} onChange={(e)=>props.setSearch(e.target.value)} id="search" placeholder='Search Posts' />
                 </form>
                 <ul>
