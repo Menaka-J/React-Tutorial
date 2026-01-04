@@ -12,6 +12,7 @@ import Footer from './Footer'
 import Home from './Home'
 import { Link, Route, Routes } from 'react-router-dom'
 import Post from './Post'
+import PostLayout from './PostLayout'
 
 function App() {
 
@@ -31,7 +32,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
           <Route path='/newpost' element={<NewPost />} />
-          <Route path='/postpage'>
+          <Route path='/postpage' element={<PostLayout />}>
             <Route index element={<PostPage />} />
             <Route path=':id' element={<Post />} />
             <Route path='newpost' element={<NewPost />} />
