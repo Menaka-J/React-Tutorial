@@ -4,7 +4,7 @@ import { Link, useParams } from 'react-router-dom'
 function Post({ post }) {
     return (
         <article className='post'>
-            <Link to={`post/${post.id}`}>
+            <Link to={`post/${post.id}`} className='postlink'>
                 <h2 className='posttitle'>{post.title}</h2>
                 <p className='postdate'>{post.datetime}</p>
             </Link>

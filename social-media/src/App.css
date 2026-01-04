@@ -105,6 +105,11 @@ body {
   line-height: 1.4;
 }
 
+.postlink{
+  text-decoration: none;
+  color: inherit;
+}
+
 /* newpost  */
 .NewPost {
   width: 100%;
