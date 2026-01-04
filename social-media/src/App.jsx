@@ -70,10 +70,11 @@ function App() {
     navigate('/');
   }
 
-  function handledelete(){
-
+  function handledelete(id){
+    const postsList = posts.filter(post=> post.id!==id);
+    setPosts(postsList);
+    navigate("/");
   }
-
   return (
     <>
       <div className='App'>
